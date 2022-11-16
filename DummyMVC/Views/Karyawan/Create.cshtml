@@ -42,16 +42,18 @@
                 <input asp-for="Umur" class="form-control" />
                 <span asp-validation-for="Umur" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <span><input class="btn btn-success" type="submit" value="Create"></span>
+            <a class="btn btn-primary" asp-action="Index" role="button">Back to List</a>
+            @*<div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            </div>*@
         </form>
     </div>
 </div>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
