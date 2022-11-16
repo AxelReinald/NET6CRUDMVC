@@ -40,7 +40,10 @@ body {
             color: white;
         }
 
-
+.btn-success {
+    margin-bottom:20px;
+    margin-top:20px;
+}
 
 div.content {
     margin-left: 200px;

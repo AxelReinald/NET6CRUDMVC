@@ -15,12 +15,12 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="NoKaryawan" class="control-label"></label>
-                <input asp-for="NoKaryawan" class="form-control" />
+                <input asp-for="NoKaryawan" class="form-control" readonly />
                 <span asp-validation-for="NoKaryawan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NamaKaryawan" class="control-label"></label>
-                <input asp-for="NamaKaryawan" class="form-control" />
+                <input asp-for="NamaKaryawan" class="form-control" readonly />
                 <span asp-validation-for="NamaKaryawan" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,17 +43,15 @@
                 <input asp-for="Umur" class="form-control" />
                 <span asp-validation-for="Umur" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            <span><input class="btn btn-success" type="submit" value="Save"></span>
+            <a class="btn btn-primary" asp-action="Index" role="button">Back to List</a>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

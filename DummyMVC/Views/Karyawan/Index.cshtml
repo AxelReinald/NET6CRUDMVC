@@ -1,9 +1,9 @@
-﻿@model IEnumerable<DummyMVC.Models.Karyawan> 
+﻿@model IEnumerable<DummyMVC.Models.Karyawan>
 
 @{
     ViewData["Title"] = "Index";
 
-       Pager pager = new Pager();
+    Pager pager = new Pager();
     int pageNo = 0;
     if (ViewBag.SearchPager != null)
     {
@@ -36,59 +36,57 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NoKaryawan)
+                No Karyawan
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NamaKaryawan)
+                Nama Karyawan
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TanggalLahir)
+                Tanggal Lahir
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Alamat)
+                Alamat
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Umur)
+                Umur
             </th>
-            <th></th>
+            <th>
+                Actions
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoKaryawan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NamaKaryawan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TanggalLahir)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Alamat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Umur)
-            </td>
-            <td>
-               @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
-                <div class="btn-group">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info">Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary ml-1">Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger ml-1">Delete</a>
-                    </div>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoKaryawan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamaKaryawan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TanggalLahir)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alamat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Umur)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id" role="button">Edit</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id" role="button">Detail</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" role="button">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
