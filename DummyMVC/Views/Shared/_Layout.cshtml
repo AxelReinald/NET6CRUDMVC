@@ -10,22 +10,19 @@
     <link rel="stylesheet" href="~/DummyMVC.styles.css" asp-append-version="true" />
 </head>
 <body>
-
     <div class="sidebar">
         <li><i class="fas fa-home"></i> PT Axel</li>
         <a class="active" href="@Url.Action("Index", "Karyawan")">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a><i class="fas fa-sign-out-alt"></i> Logout</a>      
     </div>
-
     <div class="content">
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
-
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

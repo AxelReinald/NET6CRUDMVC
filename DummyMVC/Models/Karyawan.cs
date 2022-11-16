@@ -23,7 +23,8 @@ public partial class Karyawan
     [Required]
     public string NamaKaryawan { get; set; } = null!;
 
-    [Column(TypeName = "date")]
+    [DataType(DataType.Date)]
+    [Column(TypeName = "Date")]
     public DateTime? TanggalLahir { get; set; }
 
     [StringLength(255)]
